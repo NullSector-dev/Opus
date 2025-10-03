@@ -11,7 +11,7 @@
 ## Installation
 ### Prerequisites
 - Rust toolchain [install rust](https://rust-lang.org/tools/install/).
-- `make`
+- `just`
 - `sudo`
 
 ### Build and Install
@@ -24,11 +24,11 @@ cd Opus
 ```
 Building
 ```bash
-make build
+just build
 ```
 Installing
 ```bash
-sudo make install
+sudo just install
 ```
 
 ## Usage
