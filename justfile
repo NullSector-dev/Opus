@@ -7,10 +7,15 @@ build:
 	@echo "Build complete procceed to Installation!"
 
 install:
+	@echo "Initiating Build process"
+	@cargo build --release
+	@echo "Build complete!"
 	@echo "Installing Opus...."
-	@cp ./target/release/opus /usr/local/bin
+	@sudo cp ./target/release/opus /usr/local/bin
+	@echo "cleaning build artifacts...."
+	@cargo clean
+	@echo "Build Artifacts has been cleaned!"
 	@echo "Opus has been installed successfully!"
-	@echo "It is encoraged to clean artifacts post installation."
 
 clean:
 	@echo "cleaning Build Artifacts...."

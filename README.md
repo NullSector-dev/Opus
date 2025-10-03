@@ -22,13 +22,9 @@ git clone https://github.com/NullSector-dev/Opus.git
 # Enter the repo directory
 cd Opus
 ```
-Building
-```bash
-just build
-```
 Installing
 ```bash
-sudo just install
+just install
 ```
 
 ## Usage
