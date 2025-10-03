@@ -24,8 +24,8 @@ pub fn draw(frame: &mut Frame, app: &App)
 
     match &app.input_mode
     {
-        InputMode::EditingProject(buf) => draw_popup(frame, "New Project", buf),
-        InputMode::EditingTask(buf) => draw_popup(frame, "New Task", buf),
+        InputMode::EditingProject(buf) => draw_popup(frame, " Add New Project ", buf),
+        InputMode::EditingTask(buf) => draw_popup(frame, " Add New Task ", buf),
         _ => {}
     }
 
