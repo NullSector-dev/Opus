@@ -15,7 +15,6 @@ install:
 	@echo "Installing Opus...."
 	$(SUDO) cp $(BUILD_DIR)/$(APP_NAME) $(INSTALL_DIR)
 	$(SUDO) chmod +x $(INSTALL_DIR)/$(APP_NAME)
-	clean
 	@echo "Opus has been installed successfully!"
 
 uninstall:
