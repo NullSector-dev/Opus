@@ -88,7 +88,7 @@ fn draw_tasks(frame: &mut Frame, area: ratatui::layout::Rect, app: &App)
 
 fn  draw_popup(frame: &mut Frame, title: &str, buffer: &str)
 {
-    let area = centered_popup(60, 20, frame.area());
+    let area = centered_popup(30, 3, frame.area());
     let paragraph = Paragraph::new(buffer.to_string()).block(Block::default().title(title).borders(Borders::ALL));
     frame.render_widget(Clear, area);
     frame.render_widget(paragraph, area);
@@ -96,14 +96,17 @@ fn  draw_popup(frame: &mut Frame, title: &str, buffer: &str)
 
 fn centered_popup(per_x: u16, per_y: u16, r: Rect) -> Rect
 {
+    let popup_width = r.width * per_x / 100;
+    let popup_height = r.width * per_y / 100;
 
-    let popup_layout = Layout::default()
-        .direction(Direction::Vertical)
-        .constraints([Constraint::Percentage(100 - per_y / 2), Constraint::Percentage(per_y), Constraint::Percentage(100 - per_y),])
-        .split(r);
+    let popup_x = r.width.saturating_sub(popup_width) / 2;
+    let popup_y = r.height.saturating_sub(popup_height) / 2;
 
-    Layout::default()
-        .direction(Direction::Horizontal)
-        .constraints([Constraint::Percentage((100 -per_x) / 2), Constraint::Percentage(per_x), Constraint::Percentage(100 - per_x / 2),])
-        .split(popup_layout[1])[1]
+    Rect
+    {
+        x: popup_x,
+        y: popup_y,
+        width: popup_width,
+        height: popup_height,
+    }
 }
