@@ -11,7 +11,7 @@ all: build
 build:
 	cargo build --release
 
-install: build
+install: 
 	@echo "Installing Opus...."
 	$(SUDO) cp $(BUILD_DIR)/$(APP_NAME) $(INSTALL_DIR)
 	$(SUDO) chmod +x $(INSTALL_DIR)/$(APP_NAME)
