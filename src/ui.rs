@@ -58,7 +58,7 @@ fn draw_projects(frame: &mut Frame, area: ratatui::layout::Rect, app: &App)
     let items: Vec<ListItem> = app.projects.iter().map(|p| ListItem::new(format!("{}", p.name))).collect();
 
     let list = List::new(items)
-        .block(Block::default().title("Projects").borders(Borders::ALL))
+        .block(Block::default().title(" Projects ").borders(Borders::ALL))
         .highlight_style(Style::default().add_modifier(Modifier::SLOW_BLINK))
         .highlight_symbol("-> ");
 
@@ -74,7 +74,7 @@ fn draw_tasks(frame: &mut Frame, area: ratatui::layout::Rect, app: &App)
                                   .iter()
                                   .map(|t| { let status = if t.done { "[X]" } else { " " }; ListItem::new(format!("{} {}", t.title, status)) })
                                   .collect();
-    let title = app.current_project.as_ref().map(|p| format!("{} - To-DO", p.name)).unwrap_or_else(|| "Tasks".to_string());
+    let title = app.current_project.as_ref().map(|p| format!(" {} - To-DO ", p.name)).unwrap_or_else(|| "Tasks".to_string());
 
     let list = List::new(items)
         .block(Block::default().title(title).borders(Borders::ALL))
