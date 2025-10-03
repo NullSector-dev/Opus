@@ -1,3 +1,8 @@
+// MIT License
+// Copyright (c) 2025 NullSector-dev
+// See LICENSE file for details.
+
+
 mod app;
 mod banner;
 mod ui;
