@@ -22,16 +22,23 @@ git clone https://github.com/NullSector-dev/Opus.git
 # Enter the repo directory
 cd Opus
 ```
-Installing
+Install
 ```bash
 just install
 ```
+### Reinstallation
+```bash
+just reinstall
+```
+
 
 ## Usage
 Run Opus using
 ```bash
 opus
 ```
+
+
 
 ## Binds
 ### In Projects tab
@@ -46,7 +53,7 @@ opus
 ### In Tasks tab
 | Keybind | Actions |
 |:--------|:--------|
-|t|Toggle Task Completion|
+|Enter|Toggle Task Completion|
 |a|Add Task|
 |d|Delete Task|
 |up/down| Move between Tasks|
@@ -58,6 +65,16 @@ Keybinds for pop up are universal
 |:------|:-----|
 |Enter|Add Task/Project|
 |Esc|Exit Popup|
+
+## Misc
+Available just commands can be listed by using the following command
+```bash
+just
+```
+You may use manually clean the build artifacts using
+```bash
+just clean
+```
 
 ## License
 This project is licensed under the MIT License -- See the [LICENSE](/LICENSE) file to see details.
