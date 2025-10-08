@@ -23,7 +23,7 @@ pub fn key_logic(app: &mut App, key: KeyEvent) -> Result<bool>
                 KeyCode::Esc => app.close_project(),
                 KeyCode::Down => app.next_task(),
                 KeyCode::Up => app.previous_task(),
-                KeyCode::Char('t') => app.toggle_task(),
+                KeyCode::Enter => app.toggle_task(),
                 KeyCode::Char('a') => app.input_mode = InputMode::EditingTask(String::new()),
                 KeyCode::Char('d') => app.delete_task().context("Failed to Delete Task")?,
                 _ => {}
