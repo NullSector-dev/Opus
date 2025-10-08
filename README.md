@@ -18,9 +18,9 @@
 
 ```bash
 # Cloning the repo
-git clone https://github.com/NullSector-dev/Opus.git
+git clone https://github.com/NullSector-dev/opus.git
 # Enter the repo directory
-cd Opus
+cd opus
 ```
 Install
 ```bash
