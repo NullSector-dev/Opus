@@ -26,7 +26,7 @@ Install
 ```bash
 just install
 ```
-### Reinstallation
+Reinstallation
 ```bash
 just reinstall
 ```
