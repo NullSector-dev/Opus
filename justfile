@@ -2,28 +2,35 @@ default:
 	@just --list
 
 build:
+	@echo "Initiating Build Process!"
 	@echo "Building Opus...."
 	@cargo build --release
 	@echo "Build complete procceed to Installation!"
 
-install:
-	@echo "Initiating Build process"
-	@cargo build --release
-	@echo "Build complete!"
+install:build
 	@echo "Installing Opus...."
-	@sudo cp ./target/release/opus /usr/local/bin
-	@echo "cleaning build artifacts...."
-	@cargo clean
-	@echo "Build Artifacts has been cleaned!"
+	@sudo cp ./target/release/opus /usr/local/bin/
+	@just clean
 	@echo "Opus has been installed successfully!"
 
 clean:
-	@echo "cleaning Build Artifacts...."
+	@echo "Cleaning Build Artifacts...."
 	@cargo clean
 	@echo "Cleaned Build Artifacts!"
 
+reinstall:
+	@echo "Reinstalling Opus!"
+	@echo "Deleting bin file from /usr/local/bin ...."
+	@sudo rm -rf /usr/local/bin/opus
+	@echo "Deleted bin file!"
+	@just build
+	@echo "Reinstallling the bin files"
+	@sudo cp ./target/release/opus /usr/local/bin/
+	@just clean
+	@echo "Opus has been reinstalled successfully!"
+
 uninstall:
 	@echo "Uninstalling Opus...."
-	@rm -rf /usr/local/bin/opus
+	@sudo rm -rf /usr/local/bin/opus
 	@echo "Uninstalled Opus successfully!"
 	
